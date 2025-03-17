@@ -31,7 +31,7 @@ const CounterText = styled.h2<CounterTextProps>`
 // Use it in your component
 function Counter() {
   const { token } = useToken();
-  
+
   return (
     <CounterText token={token}>
       Count: 5
@@ -49,7 +49,7 @@ import { theme } from 'antd';
 // Create a provider that makes tokens available to all styled components
 const AntdThemeProvider = ({ children }) => {
   const { token } = theme.useToken();
-  
+
   return (
     <ThemeProvider theme={token}>
       {children}
@@ -83,7 +83,7 @@ function App() {
 const StyledCard = styled(Card)`
   width: 300px;
   box-shadow: ${props => props.theme.boxShadow};
-  
+
   .ant-card-head-title {
     font-size: ${props => props.theme.fontSizeLG}px;
   }
@@ -162,7 +162,7 @@ import { motion } from 'framer-motion';
 const StyledDatePicker = styled(DatePicker)`
   border: 1px solid ${props => props.theme.colorBorder};
   border-radius: ${props => props.theme.borderRadius}px;
-  
+
   &:focus {
     border-color: ${props => props.theme.colorPrimary};
     box-shadow: 0 0 0 2px ${props => props.theme.colorPrimaryBg};
