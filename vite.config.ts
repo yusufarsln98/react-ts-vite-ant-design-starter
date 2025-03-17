@@ -10,4 +10,15 @@ export default defineConfig({
 			'@': path.resolve(__dirname, './src'),
 		},
 	},
+
+	build: {
+		rollupOptions: {
+			output: {
+				manualChunks: {
+					'react-vendor': ['react', 'react-dom'],
+					'antd-vendor': ['antd', '@ant-design/icons'],
+				},
+			},
+		},
+	},
 })

@@ -1,13 +1,16 @@
-import { StyleProvider } from '@ant-design/cssinjs'
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+// src/main.tsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import App from './App'
+import { ThemeConfigProvider, ThemeProvider } from './features/theme'
+import './index.css'
 
-createRoot(document.getElementById('root')!).render(
-	<StrictMode>
-		<StyleProvider layer>
-			<App />
-		</StyleProvider>
-	</StrictMode>
+ReactDOM.createRoot(document.getElementById('root')!).render(
+	<React.StrictMode>
+		<ThemeProvider defaultTheme='light'>
+			<ThemeConfigProvider>
+				<App />
+			</ThemeConfigProvider>
+		</ThemeProvider>
+	</React.StrictMode>
 )
