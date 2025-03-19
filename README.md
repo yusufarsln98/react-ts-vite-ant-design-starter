@@ -1,54 +1,108 @@
-# React + TypeScript + Vite
+# React, Vite and Tanstack Router (With Ant Design)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and minimal boilerplate for React projects using TypeScript, Vite, Antd Design, and other essential tools for a productive development experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡️ [Vite](https://vitejs.dev/) - Lightning fast build tool
+- ⚛️ [React 19](https://react.dev/) - The library for web UIs
+- 📝 [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
+- 🔷 [Ant Design](https://ant.design/) - A comprehensive React UI library
+- 🎨 [Styled Components](https://styled-components.com/) - CSS-in-JS styling solution
+- 📚 [Storybook](https://storybook.js.org/) - UI component development environment
+- 🔍 [ESLint](https://eslint.org/) - Code linting
+- 💅 [Prettier](https://prettier.io/) - Code formatting
+- 🐶 [Husky](https://typicode.github.io/husky/) - Git hooks made easy
+- 📋 [Commitlint](https://commitlint.js.org/) - Lint commit messages
+- 🧭 [TanStack Router](https://tanstack.com/router) - Type-safe routing for React
+- 🌐 [i18next](https://www.i18next.com/) - Internationalization framework for language switching and localization
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone this repository:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+2. Install dependencies:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Start development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production (runs TypeScript compiler and Vite build)
+- `npm run preview` - Preview production build
+- `npm run prepare` - Setup Husky git hooks
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint errors
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
+- `npm run storybook` - Start Storybook server (port 6006)
+- `npm run build-storybook` - Build Storybook
+
+## Commit Convention
+
+This boilerplate follows [Conventional Commits](https://www.conventionalcommits.org/):
+
+- `feat`: New feature
+- `fix`: Bug fix
+- docs: Documentation changes
+- `style`: Code style changes (formatting, etc.)
+- `refactor`: Code refactoring
+- `perf`: Performance improvements
+- `test`: Adding or updating tests
+- `chore`: Maintenance tasks
+- `ci`: CI/CD changes
+
+Collecting workspace informationI'll help update the project structure section in your README.md to reflect your actual workspace structure. Here's the updated version:
+
+## Project Structure
+
+```
+.
+├── .env.example       # Example environment variables
+├── .husky/            # Git hooks configuration
+├── .storybook/        # Storybook configuration
+├── docs/              # Project documentation
+├── public/            # Public static files
+├── src/
+│   ├── assets/        # Static assets (images, locales)
+│   ├── lib/           # Common utilities and configurations
+│   │   ├── hooks/     # Custom React hooks
+│   │   ├── types/     # TypeScript types and interfaces
+│   │   └── utils/     # Utility functions
+│   ├── components/    # Reusable UI components
+│   │   └── ui/        # Common UI components
+│   ├── features/      # Feature-specific modules
+│   ├── pages/         # Page components
+│   ├── routes/        # Router configuration
+│   ├── store/         # Global state management
+│   ├── stories/       # Storybook stories
+│   ├── styles/        # Global styles
+└── ... configuration files
+```
+
+Key directories:
+
+- `assets/`: Contains static files like images and localization files
+- `lib/`: Shared utilities, helpers, and configurations
+  - `utils/`: Utility functions and helpers
+  - `types/`: Shared TypeScript types and interfaces
+  - `hooks/`: Custom React hooks
+- `components/`: Reusable UI components organized by feature
+- `features/`: Feature-specific code organized in modules
+- `pages/`: Top-level page components
+- `routes/`: TanStack Router configuration and route definitions
+- `store/`: Global state management using Zustand
+
+This structure better reflects your actual project organization and includes the additional directories like `features`, `hooks`, `pages`, and `store` that are present in your workspace.
+
+## License
+
+MIT License
