@@ -16,6 +16,7 @@ A modern and minimal boilerplate for React projects using TypeScript, Vite, Antd
 - 📋 [Commitlint](https://commitlint.js.org/) - Lint commit messages
 - 🧭 [TanStack Router](https://tanstack.com/router) - Type-safe routing for React
 - 🌐 [i18next](https://www.i18next.com/) - Internationalization framework for language switching and localization
+- 🗃️ [Zustand](https://zustand-demo.pmnd.rs/) - Simple and fast state management
 
 ## Getting Started
 

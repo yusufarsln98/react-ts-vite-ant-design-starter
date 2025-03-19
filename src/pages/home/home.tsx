@@ -28,7 +28,6 @@ const StyledContent = styled(Content)`
 const StyledCard = styled(Card)`
 	margin-bottom: 24px;
 	border-radius: 8px;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 `
 
 interface HomeProps {
@@ -37,7 +36,7 @@ interface HomeProps {
 	maxSidebarWidth?: number
 }
 
-const Home: React.FC<HomeProps> = ({
+export const Home: React.FC<HomeProps> = ({
 	defaultSidebarWidth = 200,
 	minSidebarWidth = 120,
 	maxSidebarWidth = 600,
@@ -214,5 +213,3 @@ const Home: React.FC<HomeProps> = ({
 		</Layout>
 	)
 }
-
-export default Home

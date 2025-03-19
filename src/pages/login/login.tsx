@@ -17,7 +17,7 @@ const LoginContainer = styled(Content)`
 	background-color: ${(props) => props.theme.colorBgLayout};
 `
 
-const Login = () => {
+export const Login: React.FC = () => {
 	const router = useRouter()
 	const { auth, status } = Route.useRouteContext({
 		select: ({ auth }) => ({ auth, status: auth.status }),
@@ -47,5 +47,3 @@ const Login = () => {
 		</LoginContainer>
 	)
 }
-
-export default Login

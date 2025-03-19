@@ -29,7 +29,7 @@ const StyledTitle = styled(Title)`
 			transform: translateY(0);
 		}
 		50% {
-			transform: translateY(-20px);
+			transform: translateY(-10px);
 		}
 	}
 `
@@ -38,7 +38,7 @@ const StyledParagraph = styled(Paragraph)`
 	color: ${(props) => props.theme.colorTextSecondary};
 `
 
-const NotFound: React.FC = () => {
+export const NotFound: React.FC = () => {
 	return (
 		<NotFoundContainer>
 			<ContentWrapper>
@@ -61,5 +61,3 @@ const NotFound: React.FC = () => {
 		</NotFoundContainer>
 	)
 }
-
-export default NotFound
