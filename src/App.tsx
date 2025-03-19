@@ -27,7 +27,10 @@ const App: React.FC<AppProps> = ({
 
 	return (
 		<Layout>
-			<Layout style={{ height: '100vh' }}>
+			<Layout
+				style={{ height: '100vh' }}
+				hasSider={true}
+			>
 				<ResizableSidebar
 					collapsed={collapsed}
 					siderWidth={siderWidth}
