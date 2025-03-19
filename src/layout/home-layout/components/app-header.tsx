@@ -3,6 +3,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import { Layout, Button } from 'antd'
 import React from 'react'
 import styled from 'styled-components'
+import { LanguageSwitcher } from '@/features/language-switcher'
 import { ThemeSwitcher } from '@/features/theme'
 
 const { Header } = Layout
@@ -36,6 +37,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({
 				onClick={() => setCollapsed(!collapsed)}
 			/>
 			<ThemeSwitcher />
+			<LanguageSwitcher />
 		</StyledHeader>
 	)
 }

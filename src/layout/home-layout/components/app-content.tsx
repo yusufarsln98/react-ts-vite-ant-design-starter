@@ -1,5 +1,6 @@
 import { Layout } from 'antd'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 const { Content } = Layout
@@ -16,5 +17,7 @@ const StyledContent = styled(Content)`
 interface AppContentProps {}
 
 export const AppContent: React.FC<AppContentProps> = () => {
-	return <StyledContent>Content</StyledContent>
+	const { t } = useTranslation()
+
+	return <StyledContent>{t('home.greeting')}</StyledContent>
 }
