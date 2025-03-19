@@ -1,53 +1,28 @@
-import { Layout } from 'antd'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { RouterProvider } from '@tanstack/react-router'
 import React from 'react'
-import {
-	AppContent,
-	AppHeader,
-	ResizableSidebar,
-	useSidebarState,
-} from './layout/home-layout'
+import { ThemeConfigProvider, ThemeProvider } from './features/theme'
+import { auth } from './lib/utils/auth'
+import type { MainRouter } from './main'
 
-interface AppProps {
-	defaultSidebarWidth?: number
-	minSidebarWidth?: number
-	maxSidebarWidth?: number
-}
+const queryClient = new QueryClient()
 
-const App: React.FC<AppProps> = ({
-	defaultSidebarWidth = 200,
-	minSidebarWidth = 120,
-	maxSidebarWidth = 600,
-}) => {
-	const { collapsed, setCollapsed, siderWidth, isDragging, startResizing } =
-		useSidebarState({
-			defaultWidth: defaultSidebarWidth,
-			minWidth: minSidebarWidth,
-			maxWidth: maxSidebarWidth,
-		})
+type AppProps = { router: MainRouter }
 
+const App: React.FC<AppProps> = ({ router }) => {
 	return (
-		<Layout>
-			<Layout
-				style={{ height: '100vh' }}
-				hasSider={true}
-			>
-				<ResizableSidebar
-					collapsed={collapsed}
-					siderWidth={siderWidth}
-					isDragging={isDragging}
-					startResizing={startResizing}
-					collapsedWidth={0}
-					handleWidth={3}
-				/>
-				<Layout>
-					<AppHeader
-						collapsed={collapsed}
-						setCollapsed={setCollapsed}
+		<QueryClientProvider client={queryClient}>
+			<ThemeProvider defaultTheme='light'>
+				<ThemeConfigProvider>
+					<RouterProvider
+						router={router}
+						context={{
+							auth: auth,
+						}}
 					/>
-					<AppContent />
-				</Layout>
-			</Layout>
-		</Layout>
+				</ThemeConfigProvider>
+			</ThemeProvider>
+		</QueryClientProvider>
 	)
 }
 
