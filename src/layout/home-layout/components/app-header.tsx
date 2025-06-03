@@ -4,7 +4,7 @@ import { Layout, Button } from 'antd'
 import React from 'react'
 import styled from 'styled-components'
 import { LanguageSwitcher } from '@/features/language-switcher'
-import { ThemeSwitcher } from '@/features/theme'
+import ThemeSwitcher from '@/features/theme/components/theme-switcher'
 
 const { Header } = Layout
 

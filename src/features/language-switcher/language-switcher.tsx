@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const StyledButton = styled.button`
 	padding: 0.5rem 1rem;
-	background-color: #3b82f6;
+	background-color: ${(props) => props.theme.colorPrimary};
 	color: white;
 	border-radius: 0.5rem;
 	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
